@@ -30,7 +30,7 @@ public class Analyser {
 	/**
 	 * constructor with three arguments.
 	 * @param shapes Shape[]
-	 * @param comparator Comparator<Shape>
+	 * @param comparator - Comparator type comparator
 	 * @param sortAlgorithm SortAlgorithm
 	 */
 	public Analyser(Shape[] shapes, Comparator<Shape> comparator, SortAlgorithm sortAlgorithm) {

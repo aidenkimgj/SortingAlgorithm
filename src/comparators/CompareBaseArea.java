@@ -12,6 +12,9 @@ public class CompareBaseArea implements Comparator<Shape> {
 	
 	/**
 	 * This function is to compare two objects.
+	 * @param o1 - Shape type object
+	 * @param o2 - Shape type object
+	 * @return 1,-1,0 - int type numbers
 	 */
 	@Override
 	public int compare(Shape o1, Shape o2) {		

@@ -10,8 +10,8 @@ public class PentagonalPrism extends Prism {
 	
 	/**
 	 * PentagonalPrism constructor 
-	 * @param height double
-	 * @param length double
+	 * @param height - double type height
+	 * @param length - double type length
 	 */
 	public PentagonalPrism(double height, double length) {
 		super(height, length);

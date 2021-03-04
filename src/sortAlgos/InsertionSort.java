@@ -15,6 +15,8 @@ public class InsertionSort implements SortAlgorithm {
 	
 	/**
 	 * This function is to sort array using insertion.
+	 * @param shapes     - Shape type array
+	 * @param comparator - comparator
 	 */
 	@Override
 	public void sort(Shape[] shapes, Comparator<Shape> comparator)  {

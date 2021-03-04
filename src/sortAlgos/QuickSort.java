@@ -15,8 +15,8 @@ public class QuickSort implements SortAlgorithm {
 
 	/**
 	 * sort method calls quicksort() method.
-	 * @param shpes Shape[]
-	 * @param comparator Comparator<Shape>
+	 * @param shapes Shape[]
+	 * @param comparator Comparator type comparator
 	 */
 	@Override
 	public void sort(Shape[] shapes, Comparator<Shape> comparator)  {
@@ -26,7 +26,7 @@ public class QuickSort implements SortAlgorithm {
 	/**
 	 * 
 	 * @param shapes Shape[]
-	 * @param comparator Comparator<Shape>
+	 * @param comparator Comparator type comparator
 	 * @param start integer
 	 * @param end integer
 	 */
@@ -42,7 +42,7 @@ public class QuickSort implements SortAlgorithm {
 	/**
 	 * the array is divided by partition method and proceed with partition.
 	 * @param shapes Shape[]
-	 * @param comparator Comparator<Shape>
+	 * @param comparator Comparator type comparator
 	 * @param start integer
 	 * @param end integer
 	 * @return i partition

@@ -55,11 +55,12 @@ public class MergeSort implements SortAlgorithm {
 	}
 
 	/**
+	 * This method will be operated to merge divided array
 	 * 
-	 * @param temp
-	 * @param start
-	 * @param mid
-	 * @param end
+	 * @param temp - Shape type object array
+	 * @param start - int type start index
+	 * @param mid - int type mid index
+	 * @param end - int end index
 	 */
 	public void merge(Shape[] temp, int start, int mid, int end) {
 		int leftSize = mid - start + 1;
