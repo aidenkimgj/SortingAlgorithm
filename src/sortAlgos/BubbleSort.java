@@ -16,7 +16,7 @@ public class BubbleSort implements SortAlgorithm {
 				Shape temp;
 
 				if (comparator.compare(curr, next) == -1 && comparator != null
-						|| curr.compareTo(next) == -1 && comparator == null) {
+						|| comparator == null && curr.compareTo(next) == -1) {
 					temp = next;
 					shapes[j + 1] = curr;
 					shapes[j] = temp;
