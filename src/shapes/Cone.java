@@ -16,7 +16,7 @@ public class Cone extends Shape {
 
 	
 	@Override
-	public double calcBaseArea() {		
-		return Math.PI * Math.pow(radius, 2);
+	public double calcBaseArea() {
+		return Math.PI * Math.pow(this.radius, 2);
 	}	
 }

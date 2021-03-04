@@ -18,6 +18,6 @@ public class Cylinder extends Shape {
 	
 	@Override
 	public double calcBaseArea() {		
-		return Math.PI * Math.pow(radius, 2);		
+		return Math.PI * Math.pow(this.radius, 2) ;
 	}	
 }
