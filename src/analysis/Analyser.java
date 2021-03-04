@@ -7,39 +7,61 @@ import comparators.CompareVolume;
 import shapes.Shape;
 import sortAlgos.SortAlgorithm;
 
+/**
+ * This class calculates the performance of several sort methods.
+ * @author Hong, Kim and Sung
+ * @version Mar 3, 2021
+ *
+ */
 public class Analyser {
 
+	/**
+	 * define fields.
+	 */
 	private Shape[] shapes;
 	private Comparator<Shape> comparator;
 	private SortAlgorithm sortAlgorithm;
 
-	public Analyser() {
+	/**
+	 * default constructor.
+	 */
+	public Analyser() {}
 
-	}
-
+	/**
+	 * constructor with three arguments.
+	 * @param shapes Shape[]
+	 * @param comparator Comparator<Shape>
+	 * @param sortAlgorithm SortAlgorithm
+	 */
 	public Analyser(Shape[] shapes, Comparator<Shape> comparator, SortAlgorithm sortAlgorithm) {
 		this.shapes = shapes;
 		this.comparator = comparator;
 		this.sortAlgorithm = sortAlgorithm;
 	}
 
+	/**
+	 * analyze method to calculate and compare time.
+	 */
 	public void analyze() {
 		long start, stop, result;
 		double value = 0;
-		
+		// define start time.
 		start = System.currentTimeMillis();
-		
+		// call sort method.
 		this.sortAlgorithm.sort(this.shapes, this.comparator);
-		
+		// define stop time.
 		stop = System.currentTimeMillis();
 		
+		// implements duration of sorting time.
 		result = stop - start;
 		
 		int i = 0;
-		
+		// for loop, until shapes array length.
 		for(Shape shape : this.shapes) {
+			// if comparator's instance type is same as ComparBaseArea.
 			if(this.comparator instanceof CompareBaseArea) {
 				value = shape.calcBaseArea();
+			// if comparator's instance type is same as CompareVolume.
 			} else if (this.comparator instanceof CompareVolume) {
 				value = shape.calcVolume();
 			} else {
