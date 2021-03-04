@@ -24,21 +24,37 @@ import sortAlgos.QuickSort;
 import sortAlgos.SeletionSort;
 import sortAlgos.SortAlgorithm;
 
+/**
+ * Main Application
+ * 
+ * @author Hong, Kim and Sung
+ * @version March 4, 2021
+ *
+ */
 public class AppDriver {
-
+	/**
+	 * Main method
+	 * 
+	 * @param args - args
+	 * @throws IOException - IOException
+	 */
 	public static void main(String[] args) throws IOException {
+		// Global variables
 		long start, stop;
 		String fileName = "";
 		Comparator comparator = null;
 		SortAlgorithm sortAlgo = null;
 
+		// To get a command that what user wants to sort which type
 		for (String arg : args) {
 			char option1 = Character.toLowerCase(arg.charAt(1));
 			char option2 = Character.toLowerCase(arg.charAt(2));
-			if (arg.startsWith("-") && arg.length() == 3) {
+			// To perform only the instructions that conform to the rules
+			if (arg.startsWith("-") && arg.length() >= 3) {
 				switch (option1) {
 				case 'f':
 					fileName = arg.substring(2);
+					System.out.println("fileName ===> " + fileName);
 					break;
 				case 't':
 					switch (option2) {
@@ -49,9 +65,6 @@ public class AppDriver {
 						break;
 					case 'a':
 						comparator = new CompareBaseArea();
-						break;
-					default:
-						System.out.println("You put wrong value!!");
 						break;
 					}
 				case 's':
@@ -74,26 +87,22 @@ public class AppDriver {
 					case 'z':
 						sortAlgo = new OurSort();
 						break;
-					default:
-						System.out.println("You put wrong value!!");
-						break;
 					}
-				default:
-					System.out.println("You put wrong value!!");
-					break;
 				}
 			}
 		}
-
-		start = System.currentTimeMillis();
-
+		// To get Shape type, height and length from file
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 
 		String[] arr = br.readLine().split(" ");
 		br.close();
+
 		int size = (arr.length - 1) / 3;
+
 		Shape[] shapes = new Shape[size];
 		int index = 0;
+		
+		// To put Shape object in the Shape array
 		for (int i = 0; i < arr.length; i++) {
 			switch (arr[i]) {
 			case "Cone":
@@ -118,7 +127,7 @@ public class AppDriver {
 				shapes[index] = pentagonalPrism;
 				index++;
 				break;
-			case "Pyramids":
+			case "Pyramid":
 				Pyramids pyramids = new Pyramids(Double.parseDouble(arr[i + 1]), Double.parseDouble(arr[i + 2]));
 				shapes[index] = pyramids;
 				index++;
@@ -137,6 +146,7 @@ public class AppDriver {
 				break;
 			}
 		}
+		// In order to analyze the sort
 		Analyser analyser = new Analyser(shapes, comparator, sortAlgo);
 		analyser.analyze();
 
