@@ -7,7 +7,7 @@ It sorts by three types of shape (height, volume and base area) from the largest
 to smallest (descending order),
 
 ## The Authors:
-Hong, Sangmean, Kim, Aiden and Sung, Min-Chul
+Aiden Kim, Mitchell Sung, Sangmean Hong
 
 ## How to run the program:
 1) Go to the directory which include jar.file, 
